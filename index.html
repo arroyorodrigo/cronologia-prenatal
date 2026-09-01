@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Los hitos del desarrollo prenatal, los factores de riesgo y las acciones de cuidado sobre una misma escala de semanas de gestación.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤰</text></svg>">
+</head>
+<body>
+<title>Cronología prenatal y perinatal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..600&family=DM+Mono:wght@400;500&family=Jost:wght@300;400;500;600;700&display=swap">
+
+<style>
+:root{
+  --bg:#FFFFFF;
+  --surface:#F2F2F2;
+  --panel:#FFFFFF;
+  --band:#FAFAFA;
+  --ink:#000000;
+  --ink-2:#333333;
+  --muted:#666666;
+  --rule:#000000;
+  --hair:#DCDCDC;
+  --grid:#EDEDED;
+  --t1:#1F49C0;
+  --t2:#0F8B87;
+  --t3:#C2660A;
+  --riesgo:#C41E1E;
+  --cuidado:#15653F;
+  --band-1:rgba(31,73,192,.045);
+  --band-2:rgba(15,139,135,.05);
+  --band-3:rgba(194,102,10,.05);
+  --ctx-fill:20%;
+  --ctx-line:42%;
+  --stripe:rgba(0,0,0,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#000000;
+    --surface:#141414;
+    --panel:#0A0A0A;
+    --band:#0E0E0E;
+    --ink:#FFFFFF;
+    --ink-2:#D6D6D6;
+    --muted:#909090;
+    --rule:#FFFFFF;
+    --hair:#2B2B2B;
+    --grid:#1C1C1C;
+    --t1:#7A9BFF;
+    --t2:#2FCFC5;
+    --t3:#F0A63F;
+    --riesgo:#FF6F5E;
+    --cuidado:#5BD68C;
+    --band-1:rgba(122,155,255,.06);
+    --band-2:rgba(47,207,197,.055);
+    --band-3:rgba(240,166,63,.055);
+    --ctx-fill:34%;
+    --ctx-line:58%;
+    --stripe:rgba(255,255,255,.06);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#000000;
+  --surface:#141414;
+  --panel:#0A0A0A;
+  --band:#0E0E0E;
+  --ink:#FFFFFF;
+  --ink-2:#D6D6D6;
+  --muted:#909090;
+  --rule:#FFFFFF;
+  --hair:#2B2B2B;
+  --grid:#1C1C1C;
+  --t1:#7A9BFF;
+  --t2:#2FCFC5;
+  --t3:#F0A63F;
+  --riesgo:#FF6F5E;
+  --cuidado:#5BD68C;
+  --band-1:rgba(122,155,255,.06);
+  --band-2:rgba(47,207,197,.055);
+  --band-3:rgba(240,166,63,.055);
+  --ctx-fill:34%;
+  --ctx-line:58%;
+  --stripe:rgba(255,255,255,.06);
+}
+
+*{box-sizing:border-box;border-radius:0}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,44px) 80px}
+
+.rayas{background-image:repeating-linear-gradient(135deg,var(--stripe) 0 6px,transparent 6px 12px)}
+
+/* ---------- encabezado: Sharp_Headline ---------- */
+header{padding:clamp(36px,7vw,84px) 0 0}
+.eyebrow{
+  display:flex;align-items:center;gap:14px;
+  font-family:Jost,"Helvetica Neue",Arial,sans-serif;
+  font-size:.74rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink);margin:0 0 26px;
+}
+.eyebrow::after{content:"";flex:1;height:10px;border:1px solid var(--hair);border-left:none;border-right:none}
+.titular{display:flex;gap:clamp(16px,3vw,30px);align-items:stretch}
+.stripe{width:10px;background:var(--ink);flex:none}
+h1{
+  font-family:Jost,"Helvetica Neue",Arial,sans-serif;
+  font-weight:600;
+  font-size:clamp(2.4rem,7.6vw,5.4rem);
+  line-height:.94;
+  letter-spacing:-.03em;
+  text-transform:uppercase;
+  text-wrap:balance;
+  margin:0;
+}
+.lede{
+  max-width:60ch;font-size:1.06rem;color:var(--ink-2);
+  margin:26px 0 0;padding-left:calc(10px + clamp(16px,3vw,30px));
+}
+
+/* ---------- convención: Straight_Edge_Visual ---------- */
+.convencion{
+  margin:44px 0 0;
+  background:var(--ink);color:var(--bg);
+  padding:clamp(22px,3.4vw,34px) clamp(20px,3.4vw,38px);
+  display:grid;gap:8px;
+}
+.convencion h2{
+  font-family:Jost,sans-serif;font-size:.76rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;margin:0;
+}
+.convencion p{margin:0;max-width:74ch;font-size:.94rem;opacity:.82}
+
+/* ---------- leyenda: Barber_Grid ---------- */
+.leyenda{
+  margin:0 0 -1px;border:1px solid var(--rule);
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));
+}
+.lg{
+  display:flex;align-items:center;gap:12px;
+  padding:15px 18px;
+  border-right:1px solid var(--hair);
+  font-size:.82rem;color:var(--ink-2);
+}
+.lg:last-child{border-right:none}
+.sw{width:30px;height:13px;flex:none;background:var(--k)}
+.sw.rayado{background:repeating-linear-gradient(135deg,var(--riesgo) 0 3px,transparent 3px 6px);box-shadow:inset 0 0 0 1px var(--riesgo)}
+.sw.contorno{background:none;box-shadow:inset 0 0 0 2px var(--cuidado)}
+.sw.tenue{
+  background:color-mix(in oklab,var(--t1) var(--ctx-fill),transparent);
+  box-shadow:inset 0 0 0 1px color-mix(in oklab,var(--t1) var(--ctx-line),transparent);
+}
+
+/* ---------- barra de control ---------- */
+.ctrl{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  margin:52px 0 18px;
+}
+.ctrl p{
+  margin:0;font-size:.8rem;color:var(--muted);
+  font-family:Jost,sans-serif;letter-spacing:.04em;
+}
+button.todo{
+  font:600 .74rem/1 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;
+  background:var(--bg);border:1px solid var(--rule);color:var(--ink);
+  padding:12px 20px;cursor:pointer;
+}
+button.todo:hover{background:var(--ink);color:var(--bg)}
+button.todo:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* ---------- gráfico ---------- */
+.chart{
+  background:var(--panel);
+  border:1px solid var(--rule);
+  overflow-x:auto;overflow-y:visible;
+}
+.inner{min-width:840px}
+
+.fila{display:grid;grid-template-columns:var(--lab) 1fr;align-items:stretch}
+.lab{
+  position:sticky;left:0;z-index:3;
+  background:var(--panel);
+  border-right:1px solid var(--rule);
+  padding:9px 14px 9px clamp(14px,2vw,22px);
+  display:flex;flex-direction:column;justify-content:center;gap:2px;
+}
+.trk{position:relative;padding:0 22px 0 0}
+
+/* regla de semanas */
+.regla{position:sticky;top:0;z-index:5}
+.regla .lab{
+  z-index:6;background:var(--ink);border-bottom:1px solid var(--rule);
+  justify-content:flex-end;padding-bottom:9px;
+}
+.regla .trk{background:var(--ink);border-bottom:1px solid var(--rule)}
+.regla-t{
+  font-family:Jost,sans-serif;font-size:.66rem;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--bg);
+}
+.trims{position:relative;height:26px}
+.trim{
+  position:absolute;top:5px;height:21px;
+  font-family:Jost,sans-serif;font-size:.66rem;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--bg);opacity:.62;padding-left:9px;
+  border-left:1px solid var(--bg);
+  white-space:nowrap;overflow:hidden;
+}
+.ticks{position:relative;height:23px}
+.tick{
+  position:absolute;top:0;height:23px;padding-left:6px;
+  border-left:1px solid var(--bg);
+  font-family:"DM Mono",ui-monospace,monospace;
+  font-size:.7rem;color:var(--bg);
+  font-variant-numeric:tabular-nums;
+}
+
+/* bandas de fondo */
+.bandas{position:absolute;inset:0;pointer-events:none}
+.banda{position:absolute;top:0;bottom:0}
+.grid-l{position:absolute;top:0;bottom:0;width:1px;background:var(--grid)}
+
+/* filas */
+.item{border-top:1px solid var(--hair)}
+.item .lab{
+  cursor:pointer;text-align:left;font:inherit;color:inherit;width:100%;
+  border:none;border-right:1px solid var(--rule);
+  -webkit-appearance:none;appearance:none;
+}
+.item:hover .lab,.item:hover .trk{background:var(--surface)}
+.item .lab:focus-visible{outline:2px solid var(--ink);outline-offset:-3px}
+.nm{
+  font-family:Jost,sans-serif;font-size:.94rem;font-weight:500;
+  line-height:1.22;letter-spacing:-.005em;
+}
+.wk{
+  font-family:"DM Mono",ui-monospace,monospace;
+  font-size:.68rem;color:var(--muted);font-variant-numeric:tabular-nums;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.trk-i{position:relative;height:100%;min-height:42px}
+.bar{
+  position:absolute;top:50%;transform:translateY(-50%);
+  height:13px;min-width:8px;background:var(--bar);
+}
+.bar.ctx{
+  background:color-mix(in oklab,var(--bar) var(--ctx-fill),transparent);
+  box-shadow:inset 0 0 0 1px color-mix(in oklab,var(--bar) var(--ctx-line),transparent);
+}
+.riesgo .bar{--bar:var(--riesgo)}
+.cuidado .bar{--bar:var(--cuidado)}
+.riesgo .bar:not(.ctx){
+  background:repeating-linear-gradient(135deg,var(--riesgo) 0 3px,transparent 3px 6px);
+  box-shadow:inset 0 0 0 1px var(--riesgo);
+}
+.cuidado .bar:not(.ctx){background:none;box-shadow:inset 0 0 0 2px var(--cuidado)}
+
+.det{grid-column:1/-1;padding:0 clamp(14px,2vw,22px) 18px;background:var(--surface);border-top:1px solid var(--hair)}
+.det p{position:sticky;left:0;margin:14px 0 0;max-width:68ch;font-size:.9rem;color:var(--ink-2)}
+.det .t{
+  display:block;margin-top:8px;padding-top:8px;
+  border-top:1px solid var(--hair);
+  font-family:"DM Mono",ui-monospace,monospace;
+  font-size:.72rem;color:var(--muted);
+}
+
+/* separadores de sección */
+.sec{
+  grid-column:1/-1;
+  display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;
+  padding:26px clamp(14px,2vw,22px) 14px;
+  border-top:3px solid var(--rule);
+  background:var(--panel);
+}
+.fila:first-child .sec,.inner > .fila:nth-child(2) .sec{border-top:none}
+.sec h2{
+  font-family:Jost,sans-serif;font-weight:600;font-size:1.02rem;
+  letter-spacing:.14em;text-transform:uppercase;margin:0;
+}
+.sec span{font-size:.84rem;color:var(--muted);max-width:58ch}
+
+/* ---------- posnatal: Barber_Grid ---------- */
+.post{margin-top:72px}
+.post-h{display:flex;gap:clamp(16px,3vw,30px);align-items:stretch;margin-bottom:12px}
+.post h2{
+  font-family:Jost,sans-serif;font-weight:600;font-size:clamp(1.5rem,3.4vw,2.2rem);
+  letter-spacing:-.02em;text-transform:uppercase;margin:0;line-height:1;
+}
+.post > p{
+  margin:0 0 26px;max-width:62ch;color:var(--ink-2);font-size:.95rem;
+  padding-left:calc(10px + clamp(16px,3vw,30px));
+}
+.pasos{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(198px,1fr));
+  border:1px solid var(--rule);
+}
+.paso{
+  padding:22px 20px 24px;display:flex;flex-direction:column;gap:10px;
+  border-right:1px solid var(--hair);
+}
+.paso:last-child{border-right:none}
+.chip{
+  align-self:flex-start;
+  font-family:"DM Mono",ui-monospace,monospace;
+  font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--bg);background:var(--ink);padding:4px 8px;
+}
+.paso h3{font-family:Jost,sans-serif;margin:0;font-size:1rem;font-weight:600;letter-spacing:-.01em}
+.paso p{margin:0;font-size:.86rem;color:var(--ink-2)}
+
+/* ---------- fuentes ---------- */
+.fuentes{margin-top:72px;border-top:3px solid var(--rule);padding-top:28px}
+.fuentes h2{
+  font-family:Jost,sans-serif;font-size:.74rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:0 0 18px;
+}
+.fuentes ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;max-width:72ch}
+.fuentes li{font-size:.89rem;color:var(--ink-2)}
+.fuentes a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.fuentes a:hover{background:var(--ink);color:var(--bg);text-decoration:none}
+.pie{margin-top:30px;padding-top:18px;border-top:1px solid var(--hair);font-size:.8rem;color:var(--muted);max-width:68ch}
+
+/* ---------- autoría: Straight_Edge_Visual ---------- */
+.autoria{
+  margin-top:56px;
+  background:var(--ink);color:var(--bg);
+  padding:clamp(28px,4vw,44px) clamp(20px,3.4vw,42px) clamp(30px,4vw,46px);
+  display:grid;gap:16px;
+}
+.autoria h2{
+  font-family:Jost,sans-serif;font-size:.76rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;margin:0 0 4px;
+}
+.autoria p{margin:0;max-width:76ch;font-size:.92rem;line-height:1.68;opacity:.82}
+.autoria p:last-child{opacity:1;font-weight:500}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- solo impresión ---------- */
+.anexo{display:none}
+.regla-rep{display:none}
+
+/* ---------- impresión / PDF horizontal ---------- */
+@media print{
+  @page{size:A3 landscape;margin:13mm 14mm}
+  :root{
+    --bg:#FFFFFF;--surface:#F2F2F2;--panel:#FFFFFF;--band:#FAFAFA;
+    --ink:#000000;--ink-2:#333333;--muted:#666666;--rule:#000000;
+    --hair:#DCDCDC;--grid:#EDEDED;
+    --t1:#1F49C0;--t2:#0F8B87;--t3:#C2660A;
+    --riesgo:#C41E1E;--cuidado:#15653F;
+    --band-1:rgba(31,73,192,.045);--band-2:rgba(15,139,135,.05);--band-3:rgba(194,102,10,.05);
+    --ctx-fill:20%;--ctx-line:42%;--stripe:rgba(0,0,0,.05);
+  }
+  body{
+    background:#fff;color:#000;font-size:10.5px;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
+  }
+  .wrap{max-width:none;padding:0}
+  header{padding:0}
+  h1{font-size:44px}
+  .lede{font-size:12px;max-width:78ch}
+  .convencion{margin-top:22px;padding:16px 20px}
+  .convencion p{font-size:11px}
+  .ctrl{display:none}
+  .leyenda{margin-top:26px}
+  .lg{padding:10px 14px;font-size:10px}
+
+  .chart{overflow:visible;break-inside:auto}
+  .inner{min-width:0!important;width:100%;--lab:62mm!important}
+  .lab,.det p{position:static}
+  .regla{position:static}
+  .item{break-inside:avoid}
+  .sec{break-after:avoid;break-inside:avoid;padding-top:18px}
+  .fila.regla{break-after:avoid}
+  .trk-i{min-height:27px}
+  .lab{padding-top:5px;padding-bottom:5px}
+  .nm{font-size:10.5px;line-height:1.15}
+  .wk{font-size:8.5px}
+  .bar{height:10px}
+
+  /* la regla de semanas se repite al inicio de cada sección */
+  .regla-rep{display:grid!important}
+
+  .fila.sec-nueva{break-before:page}
+  .fuentes,.anexo{break-before:page}
+  .post{margin-top:44px}
+  .paso{break-inside:avoid}
+  .fuentes ul{max-width:none;columns:2;column-gap:16mm}
+  .fuentes li{break-inside:avoid}
+  .pie{max-width:none}
+  .autoria{display:block;break-inside:avoid;margin-top:34px;columns:2;column-gap:16mm}
+  .autoria h2{column-span:all;margin-bottom:12px}
+  .autoria p{font-size:10.5px;max-width:none;break-inside:avoid;margin-bottom:12px}
+
+  .anexo{display:block}
+  .anexo > h2{
+    font-family:Jost,sans-serif;font-size:12px;font-weight:600;
+    letter-spacing:.2em;text-transform:uppercase;margin:0 0 4px;
+  }
+  .anexo > p{margin:0 0 20px;font-size:11px;color:var(--muted)}
+  .anexo h3{
+    font-family:Jost,sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;
+    margin:22px 0 10px;padding-top:8px;border-top:2px solid #000;
+    break-after:avoid;column-span:all;
+  }
+  .anexo h3:first-of-type{margin-top:14px}
+  .anexo .cols{columns:3;column-gap:12mm;column-rule:1px solid var(--hair)}
+  .anexo dl{margin:0}
+  .anexo .en{break-inside:avoid;margin:0 0 11px;padding-bottom:11px;border-bottom:1px solid var(--hair)}
+  .anexo dt{font-family:Jost,sans-serif;font-size:10.5px;font-weight:600;line-height:1.25}
+  .anexo .t{
+    font-family:"DM Mono",monospace;font-size:8.5px;color:var(--muted);
+    display:block;margin:2px 0 4px;
+  }
+  .anexo dd{margin:0;font-size:9.6px;line-height:1.5;color:var(--ink-2)}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Semanas 0 &ndash; 42 &middot; edad gestacional</p>
+    <div class="titular">
+      <div class="stripe"></div>
+      <h1>Cronología prenatal y perinatal</h1>
+    </div>
+    <p class="lede">Cuándo ocurre cada hito del desarrollo, cuándo actúan los factores de riesgo y cuándo interviene el cuidado. Todo sobre una misma escala de semanas, para ver qué coincide con qué.</p>
+  </header>
+
+  <section class="convencion rayas">
+    <h2>Convención</h2>
+    <p>Las semanas se cuentan desde el primer día de la última menstruación. Los rangos son aproximados: el desarrollo normal varía entre embarazos. Los factores de riesgo no se ubican en un único momento porque pueden actuar durante distintas etapas.</p>
+  </section>
+
+  <div class="ctrl">
+    <p>Toca una fila para leer el detalle</p>
+    <button class="todo" id="toggleAll" type="button">Expandir todo</button>
+  </div>
+
+  <div class="leyenda">
+    <span class="lg" style="--k:var(--t1)"><span class="sw"></span>Primer trimestre</span>
+    <span class="lg" style="--k:var(--t2)"><span class="sw"></span>Segundo trimestre</span>
+    <span class="lg" style="--k:var(--t3)"><span class="sw"></span>Tercer trimestre</span>
+    <span class="lg"><span class="sw rayado"></span>Factor de riesgo</span>
+    <span class="lg"><span class="sw contorno"></span>Acción de cuidado</span>
+    <span class="lg"><span class="sw tenue"></span>Contexto o continuación</span>
+  </div>
+
+  <div class="chart" id="chart"></div>
+
+  <section class="post">
+    <div class="post-h">
+      <div class="stripe"></div>
+      <h2>Después del nacimiento</h2>
+    </div>
+    <p>Estos hitos se miden en minutos y horas, no en semanas, así que no caben en la escala anterior.</p>
+    <div class="pasos">
+      <div class="paso">
+        <span class="chip">Al nacer</span>
+        <h3>Primeras respiraciones</h3>
+        <p>Los pulmones se expanden y empieza el intercambio de oxígeno independiente.</p>
+      </div>
+      <div class="paso">
+        <span class="chip">Minuto 1 y 5</span>
+        <h3>Evaluación del recién nacido</h3>
+        <p>El equipo de salud observa respiración, tono, color y adaptación inicial, entre otras evaluaciones clínicas.</p>
+      </div>
+      <div class="paso">
+        <span class="chip">Primeras horas</span>
+        <h3>Contacto piel con piel</h3>
+        <p>El contacto cercano ayuda a regular temperatura, respiración y vínculo.</p>
+      </div>
+      <div class="paso">
+        <span class="chip">Primera hora</span>
+        <h3>Inicio de la lactancia</h3>
+        <p>La succión permite recibir calostro e iniciar la alimentación, si madre y bebé están estables.</p>
+      </div>
+      <div class="paso">
+        <span class="chip">Primeros días</span>
+        <h3>Adaptación circulatoria</h3>
+        <p>La circulación neonatal cambia para funcionar sin la placenta.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="fuentes">
+    <h2>Fuentes de consulta</h2>
+    <ul>
+      <li>NICHD, <a href="https://www.nichd.nih.gov/health/topics/pregnancy/conditioninfo">About Pregnancy</a>.</li>
+      <li>NICHD, <a href="https://www.nichd.nih.gov/health/topics/factsheets/labor-delivery">Labor and Delivery</a>.</li>
+      <li>NCBI Bookshelf, <a href="https://www.ncbi.nlm.nih.gov/books/NBK582659/">Critical Periods of Development</a>.</li>
+      <li>CDC, <a href="https://www.cdc.gov/pregnancy/about/index.html">Planning for Pregnancy</a> y <a href="https://www.cdc.gov/fasd/about/index.html">Alcohol and Pregnancy</a>.</li>
+      <li>OMS, <a href="https://www.who.int/publications/i/item/9789241549912">Recommendations on Antenatal Care for a Positive Pregnancy Experience</a>.</li>
+    </ul>
+    <p class="pie">Material educativo. No reemplaza la evaluación ni la indicación del equipo de salud que atiende cada embarazo.</p>
+  </section>
+
+  <section class="autoria rayas">
+    <h2>Autoría y responsabilidad</h2>
+    <p>Esta línea de tiempo se elaboró con Claude Opus 5 (Anthropic), a través de Claude Code, de forma extensa y en todas sus etapas. Solicité un instrumento que permitiera ver qué hitos del desarrollo prenatal coinciden en el tiempo con qué factores de riesgo y con qué acciones de cuidado —del tipo «qué está ocurriendo en el embrión durante la ventana de sensibilidad a la talidomida»—, a partir de un listado de cincuenta y cuatro hitos con sus rangos de semanas expresados en prosa. La codificación de esos rangos a una escala común, el gráfico y la redacción de la página fueron producidos por el modelo a partir de ese encargo y de rondas sucesivas de corrección.</p>
+    <p>Mi intervención consistió en reunir y redactar el listado de hitos, factores y acciones con sus tiempos; fijar la convención de edad gestacional contada desde la última menstruación; elegir las fuentes y contrastar contra ellas los rangos de semanas; fijar el sistema de diseño; decidir la estructura de los entregables, incluida la separación de los hitos posnatales, que se miden en minutos y horas y no admiten la escala semanal; y dirigir las iteraciones evaluando cada versión intermedia.</p>
+    <p>La autoría y la responsabilidad por el contenido de esta página son mías. La herramienta no cumple criterios de autoría, no responde por el trabajo y no figura como autora.</p>
+  </section>
+</div>
+
+<script>
+(function(){
+  const MAX = 42;
+  const pos = w => (w / MAX) * 100;
+
+  // [nombre, tiempo, descripción, segmentos [desde, hasta, 'ctx'?]]
+  const secciones = [
+    {
+      id:'des', clase:'', titulo:'Desarrollo prenatal',
+      nota:'Ordenado por el momento en que empieza cada hito.',
+      items:[
+        ['Formación del cigoto','Fecundación, aprox. semana 2','El espermatozoide fecunda el óvulo y comienza la división celular.',[[2,2.7]]],
+        ['Implantación y placenta','Semanas 3–4','El blastocisto se implanta en el útero y comienza el desarrollo placentario.',[[3,4]]],
+        ['Saco amniótico','Semanas 3–4','Se forma la membrana y el líquido que rodean y protegen al embrión.',[[3,4]]],
+        ['Tubo neural','Semanas 5–6','Empieza a formarse la estructura que originará el cerebro y la médula espinal.',[[5,6]]],
+        ['Primeros latidos','Semanas 5–6','El corazón temprano comienza a latir.',[[5,6]]],
+        ['Cordón umbilical','Semanas 5–8','Se establece la conexión entre feto y placenta para el intercambio de oxígeno y nutrientes.',[[5,8]]],
+        ['Organización de órganos','Semanas 5–10','Se forman y organizan las estructuras principales del cuerpo.',[[5,10]]],
+        ['Ojos y párpados','Ojos, semanas 5–7 · apertura de párpados, semanas 26–28','Se forman los ojos y los párpados; estos permanecen fusionados durante parte del embarazo.',[[5,7],[26,28]]],
+        ['Brotan extremidades','Semanas 6–7','Aparecen los esbozos de brazos y piernas.',[[6,7]]],
+        ['Rostro en formación','Semanas 6–10','Se modelan ojos, nariz, boca y orejas.',[[6,10]]],
+        ['Dedos separados','Semanas 8–10','Se diferencian los dedos de manos y pies; hay movimientos embrionarios que todavía no se perciben.',[[8,10]]],
+        ['Fábrica de cerebro','Todo el embarazo, sobre todo semanas 8–28','Continúa una intensa producción, migración y conexión de células nerviosas.',[[2,40,'ctx'],[8,28]]],
+        ['Esqueleto en desarrollo','Desde la semana 8 hasta el nacimiento','El cartílago comienza a osificarse y los huesos continúan creciendo.',[[8,40]]],
+        ['Movimiento coordinado','Movimientos desde semanas 8–10 · coordinación creciente en el segundo trimestre','Los movimientos se hacen más variados a medida que maduran músculos y sistema nervioso.',[[8,27]]],
+        ['Definición del sexo','Diferenciación desde la semana 9 · ecografía habitualmente desde semanas 18–20','Los órganos genitales externos se diferencian; la visualización por ecografía es más fiable más adelante.',[[9,12],[18,20,'ctx']]],
+        ['Deglución','Desde semanas 12–14','El feto traga líquido amniótico y ejercita el aparato digestivo.',[[12,40]]],
+        ['Huellas dactilares','Semanas 13–19','Se forman patrones únicos en las yemas de los dedos.',[[13,19]]],
+        ['Detalles físicos','Semanas 14–24','Se desarrollan uñas, pelo, pestañas y otros rasgos externos.',[[14,24]]],
+        ['Reflejos tempranos','Se inician en el segundo trimestre y maduran en el tercero','Se desarrollan reflejos de succión, deglución y búsqueda, importantes para la alimentación.',[[14,40]]],
+        ['Percepción materna','Semanas 16–22','La madre comienza a sentir movimientos fetales.',[[16,22]]],
+        ['Lanugo protector','Semanas 16–20; suele disminuir antes del nacimiento','Aparece un vello fino que cubre temporalmente la piel.',[[16,20]]],
+        ['Vérnix caseosa','Desde semanas 19–20 hasta el nacimiento','Una capa blanquecina protege la piel frente al líquido amniótico.',[[19,40]]],
+        ['Maduración pulmonar','Desde la semana 20 hasta el nacimiento','Los pulmones realizan movimientos respiratorios de práctica y continúan su maduración.',[[20,40]]],
+        ['Producción de sangre','Desde semanas 20–24','La médula ósea asume progresivamente la producción principal de células sanguíneas.',[[20,40]]],
+        ['Viabilidad fetal','Desde semanas 23–24; aumenta de manera importante después de la semana 28','La supervivencia fuera del útero puede ser posible con cuidados neonatales intensivos, aunque sigue con alto riesgo.',[[23,28,'ctx'],[28,40]]],
+        ['Comunicación auditiva','Audición funcional entre semanas 25 y 28','El feto responde progresivamente a sonidos, incluida la voz materna.',[[25,28]]],
+        ['Aislamiento térmico','Desde semanas 28–32 hasta el nacimiento','Aumenta el depósito de grasa bajo la piel.',[[28,40]]],
+        ['Ciclos de sueño','Reconocibles desde semanas 28–32','Se alternan periodos de actividad y descanso.',[[28,40]]],
+        ['Respuesta a la luz','Desde semanas 28–30','Los ojos pueden responder a cambios de luminosidad.',[[28,40]]],
+        ['Desarrollo inmunitario','Todo el embarazo · transferencia de anticuerpos sobre todo desde semanas 28–32','El sistema inmunitario madura y recibe anticuerpos maternos a través de la placenta.',[[2,40,'ctx'],[28,40]]],
+        ['Ganancia de peso','Tercer trimestre, desde la semana 28','Se acumulan grasa y reservas de energía.',[[28,40]]],
+        ['Posición para nacer','Con frecuencia entre semanas 32 y 36, aunque puede variar','Muchos fetos se acomodan con la cabeza hacia abajo.',[[32,36]]],
+        ['Preparación para el nacimiento','Semanas 37–42','Señales hormonales y cambios del feto, la placenta y la madre contribuyen al inicio del trabajo de parto.',[[37,42]]],
+        ['Contracciones','Al inicio del parto','El útero se contrae y el cuello uterino se borra y dilata durante el trabajo de parto.',[[37,42]]],
+        ['Nacimiento','A término completo entre semanas 39 y 40','El bebé sale del útero y comienza la adaptación al ambiente exterior.',[[39,40]]]
+      ]
+    },
+    {
+      id:'rie', clase:'riesgo', titulo:'Factores que pueden afectar el desarrollo',
+      nota:'Varios actúan durante todo el embarazo; el tramo rayado marca el periodo de mayor sensibilidad.',
+      items:[
+        ['Consumo de alcohol','Todo el embarazo; no hay cantidad ni momento seguros conocidos','Puede causar trastornos del espectro alcohólico fetal.',[[0,40]]],
+        ['Consumo de tabaco','Todo el embarazo','Se asocia con menor aporte de oxígeno, restricción del crecimiento y parto prematuro.',[[0,40]]],
+        ['Consumo de drogas','Todo el embarazo; requiere atención sanitaria sin demoras','Algunas sustancias pueden afectar el crecimiento y provocar abstinencia neonatal.',[[0,40]]],
+        ['Estrés y tensión materna','Todo el embarazo','El estrés intenso o sostenido requiere apoyo y atención durante el embarazo.',[[0,40]]],
+        ['Químicos ambientales','Todo el embarazo; mayor riesgo durante la formación de órganos','Algunos insecticidas, disolventes y pinturas pueden ser dañinos.',[[0,40,'ctx'],[5,10]]],
+        ['Desnutrición materna','Todo el embarazo; la ganancia de peso fetal es especialmente intensa en el tercer trimestre','Una alimentación insuficiente puede afectar el crecimiento fetal y el desarrollo neurológico.',[[0,40,'ctx'],[28,40]]],
+        ['Exposición a rayos X','Mayor riesgo durante la organogénesis y el desarrollo cerebral; toda exposición debe evaluarse clínicamente','La radiación ionizante puede aumentar riesgos, según dosis y etapa del embarazo.',[[0,40,'ctx'],[4,28]]],
+        ['Talidomida','Semanas 5–8; solo debe usarse bajo indicación especializada','Puede causar malformaciones graves de las extremidades y otros órganos.',[[5,8]]],
+        ['Anoxia en el parto','Trabajo de parto, nacimiento o periodo neonatal inmediato','La falta de oxígeno alrededor del nacimiento puede causar lesiones graves.',[[37,42]]]
+      ]
+    },
+    {
+      id:'cui', clase:'cuidado', titulo:'Acciones de cuidado y protección',
+      nota:'Tres de ellas empiezan antes de la concepción y siguen durante todo el embarazo.',
+      items:[
+        ['Nutrición materna adecuada','Antes de la concepción y durante todo el embarazo; el ácido fólico es especialmente importante al inicio','Aporta energía y nutrientes necesarios para el crecimiento fetal.',[[0,40]]],
+        ['Apoyo social y reducción del estrés','Todo el embarazo y el posparto','Una red de apoyo favorece el bienestar emocional y el cuidado prenatal.',[[0,40]]],
+        ['Cero sustancias químicas','Antes de la concepción y durante todo el embarazo; consulta siempre antes de suspender o iniciar medicamentos','Evitar alcohol, tabaco, drogas, medicamentos no indicados y tóxicos reduce riesgos.',[[0,40]]],
+        ['Controles prenatales y ecografías','Desde el inicio y de manera periódica; la ecografía anatómica suele hacerse entre semanas 18 y 22','Permiten seguir la salud materna y fetal.',[[4,40,'ctx'],[18,22]]],
+        ['Voz de la madre y música rítmica','Desde semanas 25–28, cuando la audición fetal está funcional','Los estímulos sonoros repetitivos pueden favorecer el vínculo y la calma.',[[25,40]]]
+      ]
+    }
+  ];
+
+  // etiqueta corta y uniforme, derivada de los segmentos
+  const rango = s => (s[1] - s[0] < 1 ? `${s[0]}` : `${s[0]}–${s[1]}`);
+  const corto = segs => {
+    const ctx = segs.filter(s => s[2] === 'ctx');
+    const sol = segs.filter(s => s[2] !== 'ctx');
+    const ancho = ctx.find(s => s[1] - s[0] >= 30);
+    if (ancho && sol.length) return `sem ${rango(ancho)} · foco ${rango(sol[0])}`;
+    if (sol.length > 1) return `sem ${sol.map(rango).join(' y ')}`;
+    return `sem ${rango(sol[0] || segs[0])}`;
+  };
+
+  const tono = inicio => (inicio < 14 ? 'var(--t1)' : inicio < 28 ? 'var(--t2)' : 'var(--t3)');
+
+  const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+  const html = [];
+
+  const trims = [[0,14,'1.er trimestre'],[14,28,'2.º trimestre'],[28,42,'3.er trimestre']];
+  const ticks = [0,4,8,12,16,20,24,28,32,36,40];
+
+  const regla = extra =>
+    `<div class="fila regla ${extra}"><div class="lab"><span class="regla-t">Semana</span></div><div class="trk">` +
+      '<div class="trims">' + trims.map(t =>
+        `<div class="trim" style="left:${pos(t[0])}%;width:${pos(t[1]-t[0])}%">${t[2]}</div>`).join('') +
+      '</div><div class="ticks">' + ticks.map(t =>
+        `<div class="tick" style="left:${pos(t)}%">${t}</div>`).join('') +
+      '</div></div></div>';
+
+  html.push(regla(''));
+
+  const fondo = '<div class="bandas">' +
+    trims.map((t,i) => `<div class="banda" style="left:${pos(t[0])}%;width:${pos(t[1]-t[0])}%;background:var(--band-${i+1})"></div>`).join('') +
+    ticks.map(t => `<div class="grid-l" style="left:${pos(t)}%"></div>`).join('') +
+    '</div>';
+
+  let n = 0;
+  secciones.forEach((sec, i) => {
+    html.push(`<div class="fila${i ? ' sec-nueva' : ''}"><div class="sec"><h2>${sec.titulo}</h2><span>${sec.nota}</span></div></div>`);
+    if (i > 0) html.push(regla('regla-rep'));
+    sec.items.forEach(([nombre, tiempo, desc, segs]) => {
+      const solido = segs.find(s => s[2] !== 'ctx') || segs[0];
+      const id = 'd' + (n++);
+      // en desarrollo, cada tramo toma el color del trimestre en que ocurre
+      const barras = segs.map(s =>
+        `<div class="bar${s[2] === 'ctx' ? ' ctx' : ''}" style="left:${pos(s[0])}%;width:${pos(s[1]-s[0])}%` +
+        `${sec.clase || s[2] === 'ctx' ? '' : `;--bar:${tono(s[0])}`}"></div>`).join('');
+      // el tramo de contexto hereda el color del tramo sólido de su fila
+      html.push(
+        `<div class="fila item ${sec.clase}" style="--bar:${tono(solido[0])}">` +
+          `<button class="lab" type="button" aria-expanded="false" aria-controls="${id}">` +
+            `<span class="nm">${esc(nombre)}</span><span class="wk" title="${esc(tiempo)}">${corto(segs)}</span>` +
+          '</button>' +
+          `<div class="trk"><div class="trk-i">${fondo}${barras}</div></div>` +
+          `<div class="det" id="${id}" hidden><p>${esc(desc)}<span class="t">Tiempo: ${esc(tiempo.charAt(0).toLowerCase() + tiempo.slice(1))}.</span></p></div>` +
+        '</div>'
+      );
+    });
+  });
+
+  const chart = document.getElementById('chart');
+  chart.innerHTML = '<div class="inner" style="--lab:clamp(152px,23vw,258px)">' + html.join('') + '</div>';
+
+  chart.addEventListener('click', e => {
+    const b = e.target.closest('button.lab');
+    if (!b) return;
+    const det = document.getElementById(b.getAttribute('aria-controls'));
+    const abierto = b.getAttribute('aria-expanded') === 'true';
+    b.setAttribute('aria-expanded', String(!abierto));
+    det.hidden = abierto;
+  });
+
+  // anexo de descripciones, solo visible al imprimir
+  const anexo = document.createElement('section');
+  anexo.className = 'anexo';
+  anexo.innerHTML = '<h2>Anexo &middot; descripciones</h2>' +
+    '<p>Texto completo de cada entrada del gráfico, en el mismo orden.</p>' +
+    secciones.map(sec =>
+      `<h3>${sec.titulo}</h3><div class="cols"><dl>` +
+      sec.items.map(([nombre, tiempo, desc]) =>
+        `<div class="en"><dt>${esc(nombre)}<span class="t">${esc(tiempo)}</span></dt>` +
+        `<dd>${esc(desc)}</dd></div>`).join('') +
+      '</dl></div>').join('');
+  document.querySelector('.fuentes').before(anexo);
+
+  const btn = document.getElementById('toggleAll');
+  btn.addEventListener('click', () => {
+    const abrir = btn.textContent.startsWith('Expandir');
+    chart.querySelectorAll('button.lab').forEach(b => {
+      b.setAttribute('aria-expanded', String(abrir));
+      document.getElementById(b.getAttribute('aria-controls')).hidden = !abrir;
+    });
+    btn.textContent = abrir ? 'Contraer todo' : 'Expandir todo';
+  });
+})();
+</script>
+</body>
+</html>
