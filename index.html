@@ -433,6 +433,11 @@ a.todo:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 }
 </style>
 
+<script>
+try{document.documentElement.dataset.theme=localStorage.getItem('tema')||'light'}
+catch(e){document.documentElement.dataset.theme='light'}
+</script>
+
 <div class="wrap">
   <header>
     <p class="eyebrow">Semanas 0 &ndash; 42 &middot; edad gestacional</p>
@@ -451,6 +456,7 @@ a.todo:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
   <div class="ctrl">
     <p>Toca una fila para leer el detalle</p>
     <div class="acciones">
+      <button class="todo" id="tema" type="button" aria-pressed="false">Tema oscuro</button>
       <a class="todo" href="cronologia-prenatal.pdf">PDF apaisado</a>
       <button class="todo" id="toggleAll" type="button">Expandir todo</button>
     </div>
@@ -680,6 +686,20 @@ a.todo:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
         `<dd>${esc(desc)}</dd></div>`).join('') +
       '</dl></div>').join('');
   document.querySelector('.fuentes').before(anexo);
+
+  const raiz = document.documentElement;
+  const btnTema = document.getElementById('tema');
+  const pintaTema = () => {
+    const oscuro = raiz.dataset.theme === 'dark';
+    btnTema.textContent = oscuro ? 'Tema claro' : 'Tema oscuro';
+    btnTema.setAttribute('aria-pressed', String(oscuro));
+  };
+  pintaTema();
+  btnTema.addEventListener('click', () => {
+    raiz.dataset.theme = raiz.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('tema', raiz.dataset.theme); } catch (e) {}
+    pintaTema();
+  });
 
   const btn = document.getElementById('toggleAll');
   btn.addEventListener('click', () => {
